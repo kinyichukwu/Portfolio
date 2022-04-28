@@ -1,0 +1,86 @@
+// layout
+.bd-grid{
+    max-width: 1024px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-column-gap: 2rem;
+    width: calc(100% - 2rem);
+    margin-left: $mb-2;
+    margin-right: $mb-2;
+}
+
+.l-header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: $z-fixed;
+    background-color: #fff;
+    box-shadow: 0 1px 4px rgba(146,161,176,.15);
+}
+
+// navigation
+.nav{
+    height: $header-height;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: $font-semi;
+}
+@media screen and (max-width: 768px) {
+    .nav{
+        &__logo{
+            color: $second-color
+        }
+        // menu
+        &__toggle{
+            color: $second-color;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        &__menu{
+            position: fixed;
+            top: $header-height;
+            right: -100%;
+            width: 80%;
+            height: 100vh;
+            padding: 2rem;
+            background-color: $second-color;
+            transition: 0.5s;
+        }
+        &__item{
+            margin-bottom: $mb-4;
+        }
+        &__link{
+            position: relative;
+            color: #fff;
+            &:hover{
+                position: relative;
+                &::after{
+                    position: absolute;
+                    content: '';
+                    width: 100%;
+                    height: 0.18rem;
+                    left: 0;
+                    top: 2rem;
+                    background-color: $first-color;
+                }
+            }
+        }
+    }
+}
+
+.active::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 0.18rem;
+    left: 0;
+    top: 2rem;
+    background-color: $first-color;
+}
+
+// show navigation
+.show{
+    right: 0;
+}

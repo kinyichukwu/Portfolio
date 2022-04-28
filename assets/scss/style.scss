@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+@import 'variables';
+@import 'header';
+@import 'home';
+@import 'about';
+@import 'skills';
+@import 'work';
+@import 'contact';
+@import 'footer';
+
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: $header-height 0 0 0;
+    font-family: $body-font;
+    font-size: $normal-font-size;
+    color: $second-color;
+}
+
+h1, h2, p {
+    margin: 0;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+// class css
+.section{
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    width: 60vw;
+    &-title{
+        position: relative;
+        font-size: $h2-font-size;
+        color: $first-color;
+        margin-top: $mb-2;
+        margin-bottom: $mb-4;
+        text-align: center;
+        &::after{
+            position: absolute;
+            content: '';
+            width: 64px;
+            height: 0.18rem;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 2rem;
+            background-color: $first-color;
+        }
+    }
+}
