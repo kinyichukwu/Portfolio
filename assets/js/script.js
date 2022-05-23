@@ -41,4 +41,10 @@ var darkMode = document.getElementById('darkMode');
 
 darkMode.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
+    if(body.classList.contains('dark-mode')){
+        darkMode.innerHTML = 'light-mode';
+    }else{
+        
+        darkMode.innerHTML = 'dark-mode';
+    }
 })
